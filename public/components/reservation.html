@@ -1,0 +1,76 @@
+<!-- Interface réservation (client/technicien) -->
+<!-- Modal de réservation -->
+<div id="modal" class="fixed inset-0 bg-black/40 backdrop-blur-sm hidden z-50 flex items-center justify-center">
+  <div class="bg-white rounded-lg shadow-xl max-w-md w-full p-6 relative mx-4">
+    <!-- Bouton de fermeture -->
+    <button id="closeModalBtn" aria-label="Fermer"
+      class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl font-bold focus:outline-none">
+      &times;
+    </button>
+
+    <!-- Titre -->
+    <h3 class="text-xl font-bold text-pink-600 mb-6 text-center">Réservez votre rendez-vous</h3>
+
+    <!-- Formulaire -->
+    <form id="appointmentForm" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div>
+        <label for="clientName" class="font-semibold mb-1 block">Nom complet *</label>
+        <input type="text" id="clientName" name="clientName" placeholder="Votre nom" required
+          class="w-full border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-pink-500" />
+      </div>
+
+      <div>
+        <label for="clientPhone" class="font-semibold mb-1 block">Téléphone *</label>
+        <input type="tel" id="clientPhone" name="clientPhone" placeholder="06 12 34 56 78" required
+          pattern="^0[1-9](?:[\s.-]?\d{2}){4}$" title="Format attendu : 0X XX XX XX XX"
+          class="w-full border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-pink-500" />
+      </div>
+
+      <div>
+        <label for="technician" class="font-semibold mb-1 block">Technicienne *</label>
+        <select id="technician" name="technician" required
+          class="w-full border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-pink-500">
+          <option value="" disabled selected>Choisir</option>
+          <option value="Maelle">Maelle</option>
+          <option value="Sophie">Sophie</option>
+          <option value="Léa">Léa</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="service" class="font-semibold mb-1 block">Service *</label>
+        <select id="service" name="service" required
+          class="w-full border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-pink-500">
+          <option value="" disabled selected>Choisir</option>
+          <option value="Pose d’ongles">Pose d’ongles</option>
+          <option value="Vernis semi-permanent">Vernis semi-permanent</option>
+          <option value="Dépose">Dépose</option>
+          <option value="Soin des mains">Soin des mains</option>
+          <option value="Soin des pieds">Soin des pieds</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="appointmentDate" class="font-semibold mb-1 block">Date du rendez-vous *</label>
+        <input type="date" id="appointmentDate" name="appointmentDate" required
+          class="w-full border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-pink-500" />
+      </div>
+
+      <div>
+        <label for="appointmentTime" class="font-semibold mb-1 block">Heure *</label>
+        <input type="time" id="appointmentTime" name="appointmentTime" required
+          class="w-full border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-pink-500" />
+      </div>
+
+      <div class="sm:col-span-2">
+        <button type="submit"
+          class="w-full bg-pink-500 text-white py-3 rounded-full font-semibold hover:bg-pink-600 transition mt-4">
+          Envoyer
+        </button>
+      </div>
+    </form>
+
+    <!-- Message de retour -->
+    <p id="formMessage" class="mt-4 text-center text-sm"></p>
+  </div>
+</div>

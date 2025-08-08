@@ -1,0 +1,146 @@
+<!-- Modale d'authentification -->
+<div id="auth-modal" class="fixed inset-0 z-50 bg-white/30 backdrop-blur-sm hidden flex items-center justify-center px-4">
+  <div class="bg-white rounded-2xl p-6 w-full max-w-md shadow-2xl relative animate-fade-in">
+    <!-- Bouton de fermeture -->
+    <button id="close-auth-modal" class="absolute top-2 right-3 text-gray-700 text-2xl hover:text-red-600 min-h-[20px]">&times;</button>
+
+    <!-- Formulaire Connexion -->
+    <form id="login-form" class="space-y-4">
+  <h2 class="text-2xl font-bold text-center text-gray-800 flex items-center justify-center gap-2">
+    <i class="fas fa-shield-alt text-pink-500"></i>
+    Connexion sécurisée
+  </h2>
+  <div>
+    <input type="email" id="login-email" required placeholder="Email" class="w-full border rounded p-2" />
+    <p class="text-sm text-red-600 mt-1 hidden min-h-[20px]" id="error-login-email"></p>
+  </div>
+  <div class="space-y-1">
+    <div class="relative">
+      <input type="password" id="login-password" required placeholder="Mot de passe" class="w-full border rounded p-2 pr-12" />
+      <button type="button" class="absolute right-3 top-1/2 -translate-y-1/2 text-pink-500" onclick="togglePassword('login-password', this)" aria-label="Afficher/Masquer">
+        <!-- Eye Open -->
+        <svg class="eye eye-open text-pink-500 w-6 h-6" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="currentColor" stroke-width="3" stroke-linecap="round">
+            <path d="M18 14 L20 10" />
+            <path d="M24 13 L26 9" />
+            <path d="M30 13 L32 9" />
+            <path d="M36 13 L38 9" />
+            <path d="M42 14 L44 10" />
+          </g>
+          <ellipse cx="32" cy="36" rx="18" ry="10" stroke="currentColor" stroke-width="3" fill="none" />
+          <circle cx="32" cy="36" r="5" fill="currentColor" />
+        </svg>
+        <!-- Eye Closed -->
+        <svg class="eye eye-closed hidden text-pink-500 w-6 h-6" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="currentColor" stroke-width="3" stroke-linecap="round">
+            <path d="M18 14 L20 10" />
+            <path d="M24 13 L26 9" />
+            <path d="M30 13 L32 9" />
+            <path d="M36 13 L38 9" />
+            <path d="M42 14 L44 10" />
+          </g>
+          <path d="M14 36 Q32 46 50 36" stroke="currentColor" stroke-width="3" fill="none" />
+        </svg>
+      </button>
+    </div>
+    <p class="text-sm text-red-600 hidden min-h-[20px]" id="error-login-password"></p>
+  </div>
+  <div id="login-message" class="hidden text-sm mt-1 text-center"></div>
+  <button type="submit" class="bg-pink-500 hover:bg-pink-600 text-white w-full rounded p-2 font-semibold">
+    Se connecter
+  </button>
+  <p class="text-sm text-center mt-2 text-gray-600">
+    Pas encore de compte ? <button type="button" id="to-register" class="text-pink-500 hover:underline font-medium">S'inscrire</button>
+  </p>
+</form>
+
+<!-- Formulaire Inscription -->
+<form id="register-form" class="space-y-4 hidden">
+  <h2 class="text-2xl font-bold text-center text-gray-800">Créer un compte</h2>
+  <div>
+    <input type="text" id="register-name" required placeholder="Nom complet" class="w-full border rounded p-2" />
+    <p class="text-sm text-red-600 mt-1 hidden min-h-[20px]" id="error-name"></p>
+  </div>
+  <div>
+    <input type="email" id="register-email" required placeholder="Email" class="w-full border rounded p-2" />
+    <p class="text-sm text-red-600 mt-1 hidden min-h-[20px]" id="error-email"></p>
+  </div>
+  <div>
+    <input type="tel" id="register-phone" required placeholder="Téléphone" class="w-full border rounded p-2" />
+    <p class="text-sm text-red-600 mt-1 hidden min-h-[20px]" id="error-phone"></p>
+  </div>
+  <div class="space-y-1">
+    <div class="relative">
+      <input type="password" id="register-password" required placeholder="Mot de passe" class="w-full border rounded p-2 pr-12" />
+      <button type="button" class="absolute right-3 top-1/2 -translate-y-1/2 text-pink-500" onclick="togglePassword('register-password', this)" aria-label="Afficher/Masquer">
+        <!-- Eye Open -->
+        <svg class="eye eye-open text-pink-500 w-6 h-6" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="currentColor" stroke-width="3" stroke-linecap="round">
+            <path d="M18 14 L20 10" />
+            <path d="M24 13 L26 9" />
+            <path d="M30 13 L32 9" />
+            <path d="M36 13 L38 9" />
+            <path d="M42 14 L44 10" />
+          </g>
+          <ellipse cx="32" cy="36" rx="18" ry="10" stroke="currentColor" stroke-width="3" fill="none" />
+          <circle cx="32" cy="36" r="5" fill="currentColor" />
+        </svg>
+        <!-- Eye Closed -->
+        <svg class="eye eye-closed hidden text-pink-500 w-6 h-6" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="currentColor" stroke-width="3" stroke-linecap="round">
+            <path d="M18 14 L20 10" />
+            <path d="M24 13 L26 9" />
+            <path d="M30 13 L32 9" />
+            <path d="M36 13 L38 9" />
+            <path d="M42 14 L44 10" />
+          </g>
+          <path d="M14 36 Q32 46 50 36" stroke="currentColor" stroke-width="3" fill="none" />
+        </svg>
+      </button>
+    </div>
+    <p class="text-sm text-red-600 hidden min-h-[20px]" id="error-password"></p>
+  </div>
+  <div class="space-y-1">
+    <div class="relative">
+      <input type="password" id="register-confirm" required placeholder="Confirmer le mot de passe" class="w-full border rounded p-2 pr-12" />
+      <button type="button" class="absolute right-3 top-1/2 -translate-y-1/2 text-pink-500" onclick="togglePassword('register-confirm', this)" aria-label="Afficher/Masquer">
+        <!-- Eye Open -->
+        <svg class="eye eye-open text-pink-500 w-6 h-6" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="currentColor" stroke-width="3" stroke-linecap="round">
+            <path d="M18 14 L20 10" />
+            <path d="M24 13 L26 9" />
+            <path d="M30 13 L32 9" />
+            <path d="M36 13 L38 9" />
+            <path d="M42 14 L44 10" />
+          </g>
+          <ellipse cx="32" cy="36" rx="18" ry="10" stroke="currentColor" stroke-width="3" fill="none" />
+          <circle cx="32" cy="36" r="5" fill="currentColor" />
+        </svg>
+        <!-- Eye Closed -->
+        <svg class="eye eye-closed hidden text-pink-500 w-6 h-6" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="currentColor" stroke-width="3" stroke-linecap="round">
+            <path d="M18 14 L20 10" />
+            <path d="M24 13 L26 9" />
+            <path d="M30 13 L32 9" />
+            <path d="M36 13 L38 9" />
+            <path d="M42 14 L44 10" />
+          </g>
+          <path d="M14 36 Q32 46 50 36" stroke="currentColor" stroke-width="3" fill="none" />
+        </svg>
+      </button>
+    </div>
+    <p class="text-sm text-red-600 hidden min-h-[20px]" id="error-confirm"></p>
+  </div>
+  <div id="register-message" class="hidden text-sm mt-1 text-center"></div>
+  <button type="submit" class="bg-pink-500 hover:bg-pink-600 text-white w-full rounded p-2 font-semibold">
+    S'inscrire
+  </button>
+  <p class="text-sm text-center mt-2 text-gray-600">
+    Déjà un compte ? <button type="button" id="to-login" class="text-pink-500 hover:underline font-medium">Se connecter</button>
+  </p>
+</form>
+  </div>
+</div>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />

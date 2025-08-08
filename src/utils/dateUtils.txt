@@ -1,0 +1,37 @@
+import { Appointment } from '../models/Appointment';
+
+export function isFutureDate(date: Date): boolean {
+  return date.getTime() > new Date().getTime();
+}
+
+export async function isSlotAvailable(
+  technician: string,
+  startTime: Date,
+  endTime: Date
+): Promise<boolean> {
+  const normalizeDate = (date: Date): Date => {
+    const d = new Date(date);
+    d.setSeconds(0);
+    d.setMilliseconds(0);
+    return d;
+  };
+
+  startTime = normalizeDate(startTime);
+  endTime = normalizeDate(endTime);
+
+  const overlapping = await Appointment.findOne({
+    technician,
+    status: { $ne: 'cancelled' },
+    $or: [
+      { startTime: { $lt: endTime }, endTime: { $gt: startTime } },
+      { startTime: { $gte: startTime, $lt: endTime } },
+      { endTime: { $gt: startTime, $lte: endTime } },
+    ],
+  });
+
+  if (overlapping) {
+    console.log(`[RÉSERVATION CONFLIT]`, { demandé: { startTime, endTime }, overlapping });
+  }
+
+  return !overlapping;
+}

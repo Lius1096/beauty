@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RDV Compacte - Beauté & Soin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-rose-50 text-gray-800">
+
+  <!-- NAVBAR -->
+  <nav class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+      <a href="#" class="text-pink-600 font-bold text-xl">RDVCompact</a>
+      <div class="hidden md:flex space-x-6 font-medium">
+        <a href="#hero" class="hover:text-pink-600">Accueil</a>
+        <a href="#testimonials" class="hover:text-pink-600">Témoignages</a>
+        <a href="#portfolio" class="hover:text-pink-600">Portfolio</a>
+        <a href="#contact" class="hover:text-pink-600">Contact</a>
+        <a href="#newsletter" class="hover:text-pink-600">Newsletter</a>
+        <button id="openModalBtn"
+          class="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 transition">Réserver</button>
+      </div>
+      <div class="md:hidden">
+        <button id="mobileMenuBtn" aria-label="Ouvrir le menu"
+          class="focus:outline-none focus:ring-2 focus:ring-pink-500">
+          <svg class="h-6 w-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden bg-white px-4 pb-4 space-y-4">
+      <a href="#hero" class="block hover:text-pink-600 font-medium">Accueil</a>
+      <a href="#testimonials" class="block hover:text-pink-600 font-medium">Témoignages</a>
+      <a href="#portfolio" class="block hover:text-pink-600 font-medium">Portfolio</a>
+      <a href="#contact" class="block hover:text-pink-600 font-medium">Contact</a>
+      <a href="#newsletter" class="block hover:text-pink-600 font-medium">Newsletter</a>
+      <button id="openModalBtnMobile"
+        class="w-full bg-pink-500 text-white py-2 rounded-full hover:bg-pink-600 transition">Réserver</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" class="text-center py-20 px-4 max-w-4xl mx-auto">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-pink-600 mb-4">Prenez soin de vous en toute simplicité</h1>
+    <p class="text-lg md:text-xl text-gray-700 max-w-xl mx-auto">Réservez votre soin en quelques clics, avec des
+      professionnelles passionnées.</p>
+    <button id="openModalBtnHero"
+      class="mt-8 bg-pink-500 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-pink-600 transition">Réserver
+      maintenant</button>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="bg-white py-16 px-4 max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold text-center text-pink-600 mb-12">Témoignages</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <blockquote class="bg-pink-50 p-6 rounded-lg shadow-md">
+        <p class="text-gray-700 italic">"Service impeccable, j'ai pu réserver facilement et rapidement."</p>
+        <footer class="mt-4 text-sm font-semibold text-pink-700">— Claire M.</footer>
+      </blockquote>
+      <blockquote class="bg-pink-50 p-6 rounded-lg shadow-md">
+        <p class="text-gray-700 italic">"Techniciennes très professionnelles, je recommande à 100%."</p>
+        <footer class="mt-4 text-sm font-semibold text-pink-700">— Julien T.</footer>
+      </blockquote>
+      <blockquote class="bg-pink-50 p-6 rounded-lg shadow-md">
+        <p class="text-gray-700 italic">"L'interface est intuitive et le support réactif."</p>
+        <footer class="mt-4 text-sm font-semibold text-pink-700">— Sophie L.</footer>
+      </blockquote>
+    </div>
+  </section>
+
+ <!-- PORTFOLIO -->
+<section id="portfolio" class="py-16 bg-pink-100 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+  <h2 class="text-3xl sm:text-4xl font-bold text-center text-pink-600 mb-12">Galerie / Portfolio</h2>
+
+  <div id="gallery"
+       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <!-- Les images seront ajoutées dynamiquement ici -->
+  </div>
+</section>
+
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-16 px-4 max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold text-pink-600 mb-8 text-center">Contactez-nous</h2>
+    <form class="max-w-lg mx-auto space-y-6">
+      <div>
+        <label for="contactName" class="block mb-2 font-semibold">Nom complet</label>
+        <input type="text" id="contactName" required
+          class="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-pink-500" />
+      </div>
+      <div>
+        <label for="contactEmail" class="block mb-2 font-semibold">Email</label>
+        <input type="email" id="contactEmail" required
+          class="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-pink-500" />
+      </div>
+      <div>
+        <label for="contactMessage" class="block mb-2 font-semibold">Message</label>
+        <textarea id="contactMessage" rows="4" required
+          class="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-pink-500"></textarea>
+      </div>
+      <button type="submit"
+        class="bg-pink-500 text-white px-6 py-3 rounded-full hover:bg-pink-600 transition font-semibold w-full">Envoyer</button>
+    </form>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section id="newsletter" class="bg-pink-600 py-16 px-4 text-white text-center">
+    <h2 class="text-3xl font-bold mb-4">Abonnez-vous à notre Newsletter</h2>
+    <p class="mb-6 max-w-xl mx-auto">Recevez toutes nos offres et nouveautés directement dans votre boîte mail.</p>
+    <form class="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
+      <input type="email" placeholder="Votre email" required
+        class="p-3 rounded-md text-gray-900 flex-grow focus:outline-none" />
+      <button type="submit"
+        class="bg-pink-800 px-6 py-3 rounded-full font-semibold hover:bg-pink-900 transition">S'abonner</button>
+    </form>
+  </section>
+
+
+
+
+  <!-- FOOTER -->
+  <footer class="bg-white py-8 text-center text-gray-600 text-sm">
+    &copy; 2025 RDVCompact. Tous droits réservés.
+  </footer>
+
+  <!-- MODAL RÉSERVER -->
+  <!-- <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white rounded-lg shadow-lg max-w-md w-full p-6 relative">
+      <button id="closeModalBtn" aria-label="Fermer"
+        class="absolute top-4 right-4 text-gray-600 hover:text-gray-900 text-2xl font-bold">&times;</button>
+      <h3 class="text-xl font-bold text-indigo-600 mb-6 text-center">Réservez votre rendez-vous</h3>
+      <form id="appointmentForm" class="grid grid-cols-1 gap-4">
+        <div>
+          <label for="clientName" class="font-semibold mb-1 block">Nom complet *</label>
+          <input type="text" id="clientName" name="clientName" placeholder="Votre nom" required
+            class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        </div>
+        <div>
+          <label for="clientPhone" class="font-semibold mb-1 block">Téléphone *</label>
+          <input type="tel" id="clientPhone" name="clientPhone" placeholder="Ex: 06 12 34 56 78" required
+            pattern="^(\+33|0)[1-9](\d{2}){4}$"
+            class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        </div>
+        <div>
+          <label for="technician" class="font-semibold mb-1 block">Technicienne *</label>
+          <select id="technician" name="technician" required
+            class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <option value="" disabled selected>Choisir</option>
+            <option value="Maelle">Maelle</option>
+            <option value="Sophie">Sophie</option>
+            <option value="Léa">Léa</option>
+          </select>
+        </div>
+        <div>
+          <label for="service" class="font-semibold mb-1 block">Service *</label>
+          <select id="service" name="service" required
+            class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <option value="" disabled selected>Choisir</option>
+            <option value="Pose d’ongles">Pose d’ongles</option>
+            <option value="Vernis semi-permanent">Vernis semi-permanent</option>
+            <option value="Dépose">Dépose</option>
+            <option value="Soin des mains">Soin des mains</option>
+            <option value="Soin des pieds">Soin des pieds</option>
+          </select>
+        </div>
+        <div class="grid grid-cols-3 gap-3">
+          <div>
+            <label for="date" class="font-semibold mb-1 block">Date *</label>
+            <input type="date" id="date" name="date" required
+              class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div>
+            <label for="startTime" class="font-semibold mb-1 block">Heure début *</label>
+            <input type="time" id="startTime" name="startTime" required step="900" min="09:00" max="18:00"
+              class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div>
+            <label for="endTime" class="font-semibold mb-1 block">Heure fin *</label>
+            <input type="time" id="endTime" name="endTime" required step="900" min="09:15" max="18:30"
+              class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+        </div>
+        <p id="message" class="text-center font-semibold mt-2"></p>
+        <button type="submit"
+          class="bg-indigo-600 text-white font-bold py-3 rounded-md hover:bg-indigo-700 transition mt-2 w-full">Réserver</button>
+      </form>
+    </div>
+  </div> -->
+
+  <div id="modal" class="fixed inset-0 bg-black/40 backdrop-blur-sm hidden z-50 flex items-center justify-center">
+  <div class="bg-white rounded-lg shadow-xl max-w-md w-full p-6 relative mx-4">
+    <button id="closeModalBtn" aria-label="Fermer"
+      class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl font-bold focus:outline-none">
+      &times;
+    </button>
+    <h3 class="text-xl font-bold text-pink-600 mb-6 text-center">Réservez votre rendez-vous</h3>
+    <form id="appointmentForm" class="grid grid-cols-1 gap-4">
+      <div>
+        <label for="clientName" class="font-semibold mb-1 block">Nom complet *</label>
+        <input type="text" id="clientName" name="clientName" placeholder="Votre nom" required
+          class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-pink-500" />
+      </div>
+      <div>
+        <label for="clientPhone" class="font-semibold mb-1 block">Téléphone *</label>
+        <input type="tel" id="clientPhone" name="clientPhone" placeholder="Ex: 06 12 34 56 78" required
+          pattern="^(\+33|0)[1-9](\d{2}){4}$"
+          class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-pink-500" />
+      </div>
+      <div>
+        <label for="technician" class="font-semibold mb-1 block">Technicienne *</label>
+        <select id="technician" name="technician" required
+          class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-pink-500">
+          <option value="" disabled selected>Choisir</option>
+          <option value="Maelle">Maelle</option>
+          <option value="Sophie">Sophie</option>
+          <option value="Léa">Léa</option>
+        </select>
+      </div>
+      <div>
+        <label for="service" class="font-semibold mb-1 block">Service *</label>
+        <select id="service" name="service" required
+          class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-pink-500">
+          <option value="" disabled selected>Choisir</option>
+          <option value="Pose d’ongles">Pose d’ongles</option>
+          <option value="Vernis semi-permanent">Vernis semi-permanent</option>
+          <option value="Dépose">Dépose</option>
+          <option value="Soin des mains">Soin des mains</option>
+          <option value="Soin des pieds">Soin des pieds</option>
+        </select>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div>
+          <label for="date" class="font-semibold mb-1 block">Date *</label>
+          <input type="date" id="date" name="date" required
+            class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-pink-500" />
+        </div>
+        <div>
+          <label for="startTime" class="font-semibold mb-1 block">Début *</label>
+          <input type="time" id="startTime" name="startTime" required step="900" min="09:00" max="18:00"
+            class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-pink-500" />
+        </div>
+        <div>
+          <label for="endTime" class="font-semibold mb-1 block">Fin *</label>
+          <input type="time" id="endTime" name="endTime" required step="900" min="09:15" max="18:30"
+            class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-pink-500" />
+        </div>
+      </div>
+      <p id="message" class="text-center font-semibold mt-2"></p>
+      <button type="submit"
+        class="bg-pink-600 text-white font-bold py-3 rounded-md hover:bg-pink-700 transition w-full">Réserver</button>
+    </form>
+  </div>
+</div>
+
+  <script>
+    // MOBILE MENU TOGGLE
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    // MODAL OPEN / CLOSE
+    const modal = document.getElementById('modal');
+    const openModalBtns = [
+      document.getElementById('openModalBtn'),
+      document.getElementById('openModalBtnHero'),
+      document.getElementById('openModalBtnMobile')
+    ].filter(Boolean); // filtre les boutons qui existent
+    const closeModalBtn = document.getElementById('closeModalBtn');
+
+    openModalBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // bloquer le scroll quand modal ouvert
+      });
+    });
+
+    function resetDateMin() {
+      const today = new Date().toISOString().split('T')[0];
+      const dateInput = document.getElementById('date');
+      if (dateInput) dateInput.min = today;
+    }
+
+    function clearMessage() {
+      const messageEl = document.getElementById('message');
+      if (messageEl) {
+        messageEl.textContent = '';
+        messageEl.classList.remove('text-green-600', 'text-red-600');
+      }
+    }
+
+    if (closeModalBtn && modal) {
+      closeModalBtn.addEventListener('click', () => {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto'; // autoriser le scroll
+        clearMessage();
+        const form = document.getElementById('appointmentForm');
+        if (form) form.reset();
+        resetDateMin();
+      });
+    }
+
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.add('hidden');
+          document.body.style.overflow = 'auto';
+          clearMessage();
+          const form = document.getElementById('appointmentForm');
+          if (form) form.reset();
+          resetDateMin();
+        }
+      });
+    }
+
+    // FORM LOGIC
+    const form = document.getElementById('appointmentForm');
+    if (form) {
+      // Initialiser date min à aujourd'hui
+      resetDateMin();
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        clearMessage();
+
+        const name = form.clientName.value.trim();
+        const phone = form.clientPhone.value.trim();
+        const technician = form.technician.value;
+        const service = form.service.value;
+        const date = form.date.value;
+        const startTime = form.startTime.value;
+        const endTime = form.endTime.value;
+        const messageEl = document.getElementById('message');
+
+        // Validation basique
+        if (!name || !phone || !technician || !service || !date || !startTime || !endTime) {
+          if (messageEl) {
+            messageEl.textContent = 'Veuillez remplir tous les champs obligatoires.';
+            messageEl.classList.add('text-red-600');
+          }
+          return;
+        }
+
+        if (startTime >= endTime) {
+          if (messageEl) {
+            messageEl.textContent = "L'heure de fin doit être supérieure à l'heure de début.";
+            messageEl.classList.add('text-red-600');
+          }
+          return;
+        }
+
+        // Construire des ISO dates complètes
+        const startDateTime = new Date(`${date}T${startTime}:00`);
+        const endDateTime = new Date(`${date}T${endTime}:00`);
+
+        // Appel API vers ton backend
+        try {
+          const response = await fetch('http://localhost:5000/appointments/', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              clientName: name,
+              clientPhone: phone,
+              technician,
+              service,
+              startTime: startDateTime.toISOString(),
+              endTime: endDateTime.toISOString()
+            }),
+          });
+
+          const data = await response.json();
+
+          if (response.ok && data.success) {
+            if (messageEl) {
+              messageEl.textContent = 'Réservation effectuée avec succès ! Merci 😊';
+              messageEl.classList.add('text-green-600');
+            }
+
+            setTimeout(() => {
+              form.reset();
+              clearMessage();
+              modal.classList.add('hidden');
+              document.body.style.overflow = 'auto';
+              resetDateMin();
+            }, 3000);
+          } else {
+            if (messageEl) {
+              messageEl.textContent = data.message || 'Erreur lors de la réservation.';
+              messageEl.classList.add('text-red-600');
+            }
+          }
+        } catch (error) {
+          if (messageEl) {
+            messageEl.textContent = 'Erreur réseau ou serveur. Merci de réessayer plus tard.';
+            messageEl.classList.add('text-red-600');
+          }
+          console.error('Erreur API:', error);
+        }
+      });
+    }
+  </script>
+
+  <!-- galeriedes photo -->
+   <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const galleryContainer = document.getElementById("gallery");
+
+  fetch("http://localhost:5000/api/portfolio")
+  // remplace par ton URL
+    .then(response => response.json())
+    .then(data => {
+      if (data.success && Array.isArray(data.data)) {
+        data.data.forEach(image => {
+          const img = document.createElement("img");
+          img.src = image.url;
+          img.alt = "Portfolio";
+          img.className = "rounded-lg shadow hover:scale-105 transition-transform duration-300 cursor-pointer";
+          galleryContainer.appendChild(img);
+        });
+      }
+    })
+    .catch(error => {
+      console.error("Erreur lors du chargement des images :", error);
+    });
+});
+</script>

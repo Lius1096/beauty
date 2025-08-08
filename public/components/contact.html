@@ -1,0 +1,23 @@
+<!-- Formulaire contact -->
+ <section id="contact" class="py-16 px-4 max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold text-pink-600 mb-8 text-center">Contactez-nous</h2>
+    <form class="max-w-lg mx-auto space-y-6">
+      <div>
+        <label for="contactName" class="block mb-2 font-semibold">Nom complet</label>
+        <input type="text" id="contactName" required
+          class="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-pink-500" />
+      </div>
+      <div>
+        <label for="contactEmail" class="block mb-2 font-semibold">Email</label>
+        <input type="email" id="contactEmail" required
+          class="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-pink-500" />
+      </div>
+      <div>
+        <label for="contactMessage" class="block mb-2 font-semibold">Message</label>
+        <textarea id="contactMessage" rows="4" required
+          class="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-pink-500"></textarea>
+      </div>
+      <button type="submit"
+        class="bg-pink-500 text-white px-6 py-3 rounded-full hover:bg-pink-600 transition font-semibold w-full">Envoyer</button>
+    </form>
+  </section>

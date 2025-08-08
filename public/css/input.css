@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+/* --- Couleurs personnalisées (exemple rose) --- */
+:root {
+  --pink-50: #fff1f2;
+  --pink-600: #db2777;
+  --pink-700: #be185d;
+  --pink-900: #831843;
+}
+
+/* --- Bouton style "pill" rose --- */
+.btn-pill {
+  @apply rounded-full font-semibold py-3 px-8 shadow;
+  background-color: var(--pink-600);
+  color: white;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-pill:hover {
+  background-color: var(--pink-700);
+}
+
+/* --- Bouton avec bordure rose et fond clair --- */
+.btn-outline-pill {
+  @apply rounded-full font-semibold py-3 px-8 shadow;
+  background-color: var(--pink-50);
+  color: var(--pink-700);
+  border: 2px solid var(--pink-700);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-outline-pill:hover {
+  background-color: var(--pink-700);
+  color: white;
+}
+
+/* --- Forme générale arrondie et ombre légère --- */
+.rounded-lg-shadow {
+  @apply rounded-lg shadow;
+}
+
+/* --- Exemple de texte rose avec hover --- */
+.text-pink-custom {
+  color: var(--pink-600);
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.text-pink-custom:hover {
+  color: var(--pink-700);
+}
+
